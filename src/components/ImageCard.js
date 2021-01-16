@@ -2,7 +2,6 @@ import React from "react";
 import Tags from "./Tags";
 
 const ImageCard = ({ image }) => {
-  console.log(image);
   const { webformatURL, user, views, downloads, likes, tags } = image;
   const tags_array = tags.split(",");
   return (

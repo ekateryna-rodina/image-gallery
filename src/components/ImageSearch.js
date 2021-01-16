@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-const ImageSearch = () => {
+const ImageSearch = ({ searchText }) => {
   const [text, setText] = useState("");
   const onSubmit = (e) => {
-    console.log("");
+    e.preventDefault();
+    searchText(text);
   };
   return (
     <div className="max-w-sm rounded overflow-hidden my-10 mx-auto">
@@ -26,7 +28,7 @@ const ImageSearch = () => {
     </div>
   );
 };
-
+ImageSearch.propTypes = {
+  searchText: PropTypes.func.isRequired,
+};
 export default ImageSearch;
-
-// absolute right-0 top-0 mt-5 mr-4

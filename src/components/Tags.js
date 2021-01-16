@@ -1,7 +1,6 @@
 import React from "react";
 
 const Tags = ({ imageId, tags }) => {
-  console.log(tags);
   return (
     <div className="px-6 py-4">
       {tags.map((tag) => (

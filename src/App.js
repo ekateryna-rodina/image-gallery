@@ -16,10 +16,15 @@ function App() {
         setLoading(false);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [term]);
   return (
     <div className="container mx-auto">
-      <ImageSearch />
+      <ImageSearch searchText={(text) => setTerm(text)} />
+      {!loading && images.length === 0 && (
+        <h2 className="text-5xl text-center mx-auto mt-32">
+          No results for this term found
+        </h2>
+      )}
       {loading ? (
         <div className="md:flex md:justify-center mb-6">
           <div className="loader">Loading...</div>
